@@ -1,6 +1,6 @@
 {
   "name": "lottery-prize",
-  "version": "1.0.2",
+  "version": "1.1.2",
   "description": "name of prize must be continuous number and start from 1（like:1.png, 2.png)",
   "main": "./dist/prize.js",
   "scripts": {

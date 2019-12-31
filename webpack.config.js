@@ -7,7 +7,9 @@ module.exports = {
   output: {
     path: __dirname,
     filename: "dist/prize.js",
-    library: 'Prize'
+    library: 'Prize',
+    libraryTarget: 'umd',
+    umdNamedDefine: true
   },
   module: {
     rules: [

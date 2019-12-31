@@ -2,32 +2,14 @@
 
 name of image must be continuous number and start at 1（like:1.png, 2.png)
 
-- 方式一
-
-```bash
-npm i lottery-prize
-```
-
-- 方式二
-
 ```javascript
 
+<link rel="stylesheet" href="./dist/index.css">
 <script src="/dist/prize.js"></script>
 
 ```
 
 ## 使用方法
-
-- 方式一
-
-```javascript
-import Prize from 'prize.js'
-let game = new Prize(el, options)
-
-game.start(win, num) // 调用开始抽奖方法，传入是否中奖，奖品号码
-```
-
-- 方式二
 
 ```js
 new Prize(el, options)

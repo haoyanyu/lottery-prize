@@ -1,5 +1,14 @@
-var Prize =
-/******/ (function(modules) { // webpackBootstrap
+(function webpackUniversalModuleDefinition(root, factory) {
+	if(typeof exports === 'object' && typeof module === 'object')
+		module.exports = factory();
+	else if(typeof define === 'function' && define.amd)
+		define("Prize", [], factory);
+	else if(typeof exports === 'object')
+		exports["Prize"] = factory();
+	else
+		root["Prize"] = factory();
+})(window, function() {
+return /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
 /******/
@@ -99,3 +108,4 @@ eval("function _classCallCheck(instance, Constructor) { if (!(instance instanceo
 /***/ })
 
 /******/ });
+});

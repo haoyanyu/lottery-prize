@@ -1,4 +1,3 @@
-// import _ from 'lodash'
 function checkNode (el) {
   let result = el
   if (!result) {
@@ -67,7 +66,7 @@ class Prize {
     }
     this.el.appendChild(prizeWrap)
     this.prizeWrap = prizeWrap
-    console.log(this.prizeDomList)
+    // console.log(this.prizeDomList)
   }
   readyGame () {
     this.getPrizeHeight()
@@ -97,7 +96,7 @@ class Prize {
         ul.appendChild(li)
       })
       let y = this.prize_list_item_h * this.prize_init[index]
-      console.log(this.prize_list_item_h, this.prize_init)
+      // console.log(this.prize_list_item_h, this.prize_init)
       ul.style.transitionDuration = '0ms'
       ul.style.transform = `translate(0px, -${y}px) translateZ(0px)`
     })

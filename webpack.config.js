@@ -3,13 +3,11 @@ var webpack = require('webpack')
 
 module.exports = {
   mode: 'development',
-  entry: "./src/index.js",
+  entry: "./src/main.js",
   output: {
     path: __dirname,
     filename: "dist/prize.js",
-    library: 'Prize',
-    libraryTarget: 'umd',
-    umdNamedDefine: true
+    library: 'Prize'
   },
   module: {
     rules: [

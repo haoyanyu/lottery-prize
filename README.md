@@ -1,6 +1,6 @@
 ## 安装方法
 
-奖品图片必须以连续数字，从1开始命名（1.png)
+name of image must be continuous number and start at 1（like:1.png, 2.png)
 
 - 方式一
 

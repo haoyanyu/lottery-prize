@@ -1,7 +1,7 @@
 {
   "name": "lottery-prize",
-  "version": "1.0.1",
-  "description": "奖品图片必须以连续数字，从1开始命名（1.png)",
+  "version": "1.0.2",
+  "description": "name of prize must be continuous number and start from 1（like:1.png, 2.png)",
   "main": "./dist/prize.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

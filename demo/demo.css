@@ -1,0 +1,123 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+img {
+  vertical-align: middle;
+}
+.prize-goods-wrap {
+  position: relative;
+  width: 64%;
+  height: 16vw;
+  margin: 0 auto;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-top-left-radius: 0.1875rem;
+  border-top-right-radius: 0.1875rem;
+  border-bottom-left-radius: 0.25rem;
+  border-bottom-right-radius: 0.25rem;
+  overflow: hidden;
+}
+.prize-goods-wrap img {
+  display: block;
+  width: 100%;
+}
+.prize-btn {
+  /* display: block; */
+  background: green;
+}
+
+.prize-goods-wrap:before {
+  position: absolute;
+  top: -1PX;
+  right: -1px;
+  bottom: 1PX;
+  left: -1px;
+  border-top-left-radius: 0.25rem;
+  border-top-right-radius: 0.25rem;
+  width: 102%;
+  height: 100%;
+  content: "";
+  box-shadow: 0 1.25rem 1.25rem -1.25rem #000 inset;
+  z-index: 12;
+}
+.prize-goods-wrap:after {
+  position: absolute;
+  top: 1PX;
+  right: 0;
+  bottom: -1PX;
+  left: -1px;
+  border-bottom-left-radius: 0.25rem;
+  border-bottom-right-radius: 0.25rem;
+  width: 102%;
+  height: 100%;
+  content: "";
+  box-shadow: 0 -1.25rem 1.25rem -1.25rem #000 inset;
+  z-index: 12;
+}
+.prize-goods-wrap .prize-goods-list {
+  height: 100%;
+  overflow: hidden;
+}
+.prize-goods-wrap .prize-goods-list .prize-goods {
+  position: absolute;
+  width: 32%;
+  height: 100%;
+  z-index: 10;
+  overflow: hidden;
+}
+.prize-goods-wrap .prize-goods-list .prize-goods:first-child {
+  left: -32%;
+  transform: translateX(100%);
+  -ms-transform: translateX(100%);
+  -moz-transform: translateX(100%);
+  -webkit-transform: translateX(100%);
+  -o-transform: translateX(100%);
+}
+.prize-goods-wrap .prize-goods-list .prize-goods:nth-child(2) {
+  left: 50%;
+  transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
+}
+.prize-goods-wrap .prize-goods-list .prize-goods:last-child {
+  left: 100%;
+  transform: translateX(-100%);
+  -ms-transform: translateX(-100%);
+  -moz-transform: translateX(-100%);
+  -webkit-transform: translateX(-100%);
+  -o-transform: translateX(-100%);
+}
+.prize-goods-wrap .prize-goods-box {
+  height: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+}
+.prize-goods-wrap .prize-goods-ul {
+  position: relative;
+  top: 0;
+  font-size: 0;
+  z-index: 10;
+}
+.prize-goods-wrap .prize-goods-ul li {
+  position: relative;
+  width: 100%;
+}
+.prize-goods-wrap .prize-goods-ul li img {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  height: 90%;
+  width: auto;
+}

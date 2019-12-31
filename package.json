@@ -1,0 +1,18 @@
+{
+  "name": "prize",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./dist/prize.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.7.7",
+    "@babel/preset-env": "^7.7.7",
+    "babel-loader": "^8.0.6",
+    "webpack": "^4.41.5",
+    "webpack-cli": "^3.3.10"
+  }
+}

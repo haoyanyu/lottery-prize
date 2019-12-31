@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <title>抽奖</title>
+    <link rel="stylesheet" href="./demo.css">
+	</head>
+	<body>
+		<script src="../dist/prize.js"></script>
+    <div style="margin-top: 20px" id="prize-content"></div>
+    <span id="btn">抽奖</span>
+    <script>
+      let options = {};
+			let threePrize = new Prize(document.querySelector('#prize-content'), {
+        imageSrc: '../images',
+        pageNum: 4,
+        pageSize: 12,
+        imageType: 'jpeg'
+      });
+      document.querySelector('#btn').addEventListener('click', function(){
+        threePrize.start(true, 3)
+      })
+		</script>
+	</body>
+</html>

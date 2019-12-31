@@ -1,12 +1,12 @@
 {
-  "name": "prize",
-  "version": "1.0.0",
-  "description": "",
+  "name": "lottery-prize",
+  "version": "1.0.1",
+  "description": "奖品图片必须以连续数字，从1开始命名（1.png)",
   "main": "./dist/prize.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "haoyanyu",
   "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.7.7",
@@ -14,5 +14,22 @@
     "babel-loader": "^8.0.6",
     "webpack": "^4.41.5",
     "webpack-cli": "^3.3.10"
-  }
+  },
+  "dependencies": {
+    "lodash": "^4.17.15"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/haoyanyu/lottery-prize.git"
+  },
+  "keywords": [
+    "slot",
+    "machine",
+    "lottery",
+    "prize"
+  ],
+  "bugs": {
+    "url": "https://github.com/haoyanyu/lottery-prize/issues"
+  },
+  "homepage": "https://github.com/haoyanyu/lottery-prize#readme"
 }

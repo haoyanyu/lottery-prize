@@ -23,13 +23,7 @@ module.exports = {
     ]
   },
   plugins: [
-    // new webpack.optimize.UglifyJsPlugin({
-    //   output: {
-    //     comments: false,  // remove all comments
-    //   },
-    //   compress: {
-    //     warnings: false
-    //   }
-    // })
+    
   ]
 }
+

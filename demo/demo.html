@@ -19,7 +19,10 @@
         imageType: 'jpeg'
       });
       document.querySelector('#btn').addEventListener('click', function(){
-        threePrize.start(true, 3)
+        let win = Math.random() > 0.5 ? true : false
+        let num = Math.round(Math.random() * 12 )
+        console.log(win, num)
+        threePrize.start(win, num)
       })
 		</script>
 	</body>

@@ -5,7 +5,7 @@ name of image must be continuous number and start at 1（like:1.png, 2.png)
 - 方法一
 
 ```javascript
-<link rel="stylesheet" href="./dist/index.css">
+<link rel="stylesheet" href="/dist/index.css">
 <script src="/dist/prize.js"></script>
 
 ```
@@ -30,6 +30,7 @@ game.start(win, num) // 调用开始抽奖方法，传入是否中奖，奖品�
 
 ```js
 import  Prize from 'lottery-prize'
+import 'lottery-prize/dist/index.css'
 let game = new Prize(el, options)
 game.start(win, num) // 调用开始抽奖方法，传入是否中奖，奖品号码
 ```

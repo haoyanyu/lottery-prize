@@ -19,6 +19,7 @@ function checkNode (el) {
 
 class Prize {
   constructor (el, options) {
+    this.starting = false // 是否在抽奖过程中，避免重复触发抽奖
     this.prizeArr = [] // 所有奖品 
     this.pageSize = options.pageSize // 参与抽奖的奖品
     this.prize_list_h = '' // 奖品垂直排列后的高度
@@ -68,6 +69,7 @@ class Prize {
     this.prizeWrap = prizeWrap
     // console.log(this.prizeDomList)
   }
+  // 获取奖品高度，设置奖品图片，插入dom节点
   readyGame () {
     this.getPrizeHeight()
     this.getImages()
@@ -113,27 +115,32 @@ class Prize {
     }
     return Object.assign({}, baseOptions, options)
   }
+  // 抽奖开始
   start (win, num) {
+    if (this.starting) return
+    this.starting = true
     let self = this
-    function removeListener () {
+    function transitionListener () {
       let num = self.prize_num || []
       for (let i = 0; i < 3; i++) {
         let y0 = num[i] * self.prize_list_item_h;
         self.prizeDomList[i].style.transitionDuration = '0ms';
         self.prizeDomList[i].style.transform = `translate(0px, -${y0}px) translateZ(0px)`;
       }
-      self.prizeDomList[2].removeEventListener('webkitTransitionEnd', removeListener)
+      self.starting = false
+      self.prizeDomList[2].removeEventListener('webkitTransitionEnd', transitionListener)
     }
     if (win) {
-      let y = (num + this.pageSize * (this.options.pageNum - 1)) * this.prize_list_item_h;
+      let y = ((num - 1) + this.pageSize * (this.options.pageNum - 1)) * this.prize_list_item_h;
       for (let i = 0; i < 3; i++) {
         setTimeout(() => {
           this.prizeDomList[i].style.transitionDuration = '5000ms';
           this.prizeDomList[i].style.transform = `translate(0px, -${y}px) translateZ(0px)`;
         }, i * 300);
       }
-      this.prize_num = new Array(3).fill(num)
-      this.prizeDomList[2].addEventListener('webkitTransitionEnd', removeListener)
+      this.prize_num = new Array(3).fill(num - 1)
+      // transform到第一轮的对应位置，确保下次继续滚动，否则会出现回滚的现象
+      this.prizeDomList[2].addEventListener('webkitTransitionEnd', transitionListener)
     } else {
       let num_list = randNum(this.pageSize)
       for (let i = 0; i < 3; i++) {
@@ -144,11 +151,16 @@ class Prize {
         }, i * 300);
       }
       this.prize_num = num_list
-      this.prizeDomList[2].addEventListener('webkitTransitionEnd', removeListener)
+      this.prizeDomList[2].addEventListener('webkitTransitionEnd', transitionListener)
     }
   }
 }
 function randNum (pageSize) {
-  return [pageSize, pageSize, pageSize].map(size => Math.floor(Math.random() * size))
+  let num_list = [pageSize, pageSize, pageSize].map(size => Math.floor(Math.random() * size))
+  // 确保不出现3个一样的数字
+  if (num_list[0] === num_list[2]) {
+    num_list = randNum(pageSize)
+  }
+  return num_list
 }
 module.exports = Prize
